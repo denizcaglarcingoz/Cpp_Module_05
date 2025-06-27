@@ -17,11 +17,11 @@ Form::Form(const Form& copy): Name(copy.Name), IsSigned(copy.IsSigned), GradeToS
 
 Form& Form::operator=(const Form& other)
 {
-    if (this != &other)
+	if (this != &other)
 	{
-        IsSigned = other.IsSigned;
-    }
-    return *this;
+		IsSigned = other.IsSigned;
+	}
+	return *this;
 }
 
 Form::~Form()
@@ -37,22 +37,22 @@ void		Form::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() > GradeToSign)
 		throw GradeTooLowException();
-    IsSigned = true;
+	IsSigned = true;
 }
 
 const char*	Form::GradeTooHighException::what() const throw()
 { 
-    return "Form grade too high"; 
+	return "Form grade too high"; 
 }
 const char*	Form::GradeTooLowException::what() const throw()
 { 
-    return "Form grade too low"; 
+	return "Form grade too low"; 
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
 {
-    os << f.getName() << " (sign: " << f.getGradeToSign()
-       << ", exec: " << f.getGradeToExecute()
-       << ") signed: " << std::boolalpha << f.getIsSigned();
-    return os;
+	os << f.getName() << " (sign: " << f.getGradeToSign()
+		<< ", exec: " << f.getGradeToExecute()
+		<< ") signed: " << std::boolalpha << f.getIsSigned();
+	return os;
 }

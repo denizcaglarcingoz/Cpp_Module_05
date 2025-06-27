@@ -18,7 +18,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
-	if (this != &other) {
+	if (this != &other)
+	{
 		AForm::operator=(other);
 	}
 	return *this;
@@ -36,11 +37,11 @@ void	PresidentialPardonForm::executeAction() const
 
 std::ostream&	operator<<(std::ostream& os, const PresidentialPardonForm& f)
 {
-    os << f.getName()
-       << " (signed= "   << std::boolalpha << f.getIsSigned()
-       << ", signG= "    << f.getGradeToSign()
-       << ", execG= "    << f.getGradeToExecute()
-       << ", target= "   << f.getTarget()
-       << ")";
-    return os;
+	os << f.getName()
+		<< " (signed= "		<< std::boolalpha << f.getIsSigned()
+		<< ", signG= "		<< f.getGradeToSign()
+		<< ", execG= "		<< f.getGradeToExecute()
+		<< ", target= "		<< f.getTarget()
+		<< ")";
+	return os;
 }

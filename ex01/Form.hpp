@@ -24,18 +24,18 @@ public:
 	int							getGradeToSign() const;
 	int							getGradeToExecute() const;
 
-    void						beSigned(const Bureaucrat& b);
+	void						beSigned(const Bureaucrat& b);
 
-    class GradeTooHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char*	what() const throw();
-    };
-    class GradeTooLowException : public std::exception
+	};
+	class GradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char*	what() const throw();
-    };
+	};
 };
 
 std::ostream&					operator<<(std::ostream& os, const Form& f);

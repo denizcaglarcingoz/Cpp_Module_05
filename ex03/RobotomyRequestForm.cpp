@@ -43,7 +43,7 @@ void	RobotomyRequestForm::executeAction() const
 	std::cout << "Drill baby Drill!!!!" << std::endl;
 	std::cout << "Drill baby Drill!!!!" << std::endl;
 
-    if (std::rand() % 2)
+	if (std::rand() % 2)
 	{
 		std::cout << target << " has been robotomized." << std::endl;
 	}
@@ -55,11 +55,11 @@ void	RobotomyRequestForm::executeAction() const
 
 std::ostream&	operator<<(std::ostream& os, const RobotomyRequestForm& f)
 {
-    os << f.getName()
-       << " (signed= "   << std::boolalpha << f.getIsSigned()
-       << ", signG= "    << f.getGradeToSign()
-       << ", execG= "    << f.getGradeToExecute()
-       << ", target= "   << f.getTarget()
-       << ")";
-    return os;
+	os << f.getName()
+		<< " (signed= "		<< std::boolalpha << f.getIsSigned()
+		<< ", signG= "		<< f.getGradeToSign()
+		<< ", execG= "		<< f.getGradeToExecute()
+		<< ", target= "		<< f.getTarget()
+		<< ")";
+	return os;
 }
